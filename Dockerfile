@@ -4,13 +4,14 @@ FROM node:current-alpine
 # set working directory
 WORKDIR /app
 
+# copy files to working directory
 ADD . /app
 
-RUN npm install -g -s --no-progress yarn && \
-    yarn && \ 
-    yarn cache clean
+# install dependencies
+RUN yarn 
 
 # expose preferred port
 EXPOSE 3000
 
+# on `docker run` fire `yarn start`
 CMD [ "yarn", "start" ]
