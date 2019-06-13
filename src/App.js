@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import TopNav from "./components/TopNav";
-import Map from "./map";
+import React from "react";
+import { Provider } from "react-redux";
+import { Map, TopBar, TabbedMenu } from "components";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <TopNav />
-        <Map />
-      </div>
-    );
-  }
+import store from "redux/store";
+
+import "./App.css";
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <TopBar />
+      <TabbedMenu />
+      <Map />
+    </Provider>
+  );
 }
-
-export default App;
