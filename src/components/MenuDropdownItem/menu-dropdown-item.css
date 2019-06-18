@@ -20,6 +20,8 @@ text-overflow: ellipsis;
   width: 100%;
   flex-flow: column nowrap;
   padding: 10px;
+  margin-top: .5em;
+  margin-bottom: .5em;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -76,6 +78,7 @@ text-overflow: ellipsis;
 .prov-type.wrapped {
   width: 100px;
 }
+
 .prov-type.expanded {
   width: 180px;
 }
@@ -92,6 +95,7 @@ text-overflow: ellipsis;
 .wrapped-info svg:first-of-type {
   margin-right: 5px;
 }
+
 .wrapped-info .wrapped-icons svg {
   font-size: 12px;
   margin: 3px;
@@ -140,7 +144,7 @@ text-overflow: ellipsis;
   color: red;
 }
 
-.remoteButton > svg {
+.remoteButton>svg {
   font-size: 20px;
 }
 
@@ -156,14 +160,14 @@ text-overflow: ellipsis;
   color: #fff;
 }
 
-.button > svg {
+.button>svg {
   font-size: 25px;
 }
 
-.button.unsaved > svg {
+.button.unsaved>svg {
   margin-right: 5px;
 }
 
-.button.saved > svg {
+.button.saved>svg {
   margin-bottom: 5px;
 }
