@@ -1,1 +1,8 @@
 .DS_Store
+=======
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+node_modules
+package-lock.json
+yarn.lock
+.vscode
