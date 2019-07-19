@@ -111,10 +111,6 @@ If there is a merge conflict that cannot be resolved automatically, the output f
 npm install
 ```
 
-## Testing
-
-TODO
-
 ## Tech Stack
 
 - [Reactjs](https://facebook.github.io/react/docs/react-api.html)
