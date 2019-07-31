@@ -23,8 +23,13 @@ class ProviderList extends Component {
             <SortDropdown
               className="sort-by"
               options={["Distance", "Name", "Provider Type"]}
+<<<<<<< HEAD
               header="Sort By"
               handleChange={(id) => {
+=======
+              header={"sorted by "}
+              handleChange={id => {
+>>>>>>> 34cddecbe81b900d298a92c1e426582f0af3a504
                 changeSortOrder(id);
               }}
               group="sort"
