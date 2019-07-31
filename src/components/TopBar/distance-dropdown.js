@@ -1,6 +1,6 @@
 import React from "react";
 import RadioButtonDropdown from "../Dropdowns/radio-button-dropdown";
-import distances from "assets/distances";
+import distances from "../../assets/distances";
 import { Row } from "simple-flexbox";
 
 const defaultDistanceText = "None Selected";

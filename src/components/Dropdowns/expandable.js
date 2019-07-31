@@ -1,11 +1,11 @@
 import React from "react";
 import "./expandable.css";
-import ClickAwayDetector from "components/common/click-away-detector";
+import ClickAwayDetector from "../common/click-away-detector";
 
 export default class Expandable extends React.Component {
   static defaultProps = {
     expanded: false,
-    closeOnSelect: false,
+    closeOnSelect: false
   };
 
   constructor(props) {
@@ -17,8 +17,11 @@ export default class Expandable extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.onToggleExpanded && (this.state.expanded !== prevState.expanded)) {
-       this.props.onToggleExpanded(this.state.expanded);
+    if (
+      this.props.onToggleExpanded &&
+      this.state.expanded !== prevState.expanded
+    ) {
+      this.props.onToggleExpanded(this.state.expanded);
     }
   }
 
@@ -31,12 +34,12 @@ export default class Expandable extends React.Component {
     const { closeOnSelect } = this.state;
     if (closeOnSelect) {
       this.setState({ expanded: false });
-    } 
-  }
+    }
+  };
 
   render() {
     const { expanded } = this.state;
-    const { className, content, footer, header, } = this.props;
+    const { className, content, footer, header } = this.props;
 
     return (
       <ClickAwayDetector
@@ -51,7 +54,10 @@ export default class Expandable extends React.Component {
           <div onClick={this.toggleExpanded} className="expandable-header">
             {header}
           </div>
-          <div onClick={this.toggleExpandedOnSelect} className={`expanded-content ${expanded ? "expanded" : ""}`}>
+          <div
+            onClick={this.toggleExpandedOnSelect}
+            className={`expanded-content ${expanded ? "expanded" : ""}`}
+          >
             {content}
           </div>
           <div className={`expanded-content ${expanded ? "expanded" : ""}`}>

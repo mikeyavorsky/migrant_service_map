@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "components/ProviderList/provider-list.css";
+import "../ProviderList/provider-list.css";
 
 class DistanceFilter extends Component {
   render() {

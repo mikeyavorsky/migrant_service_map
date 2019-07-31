@@ -5,9 +5,9 @@ import {
   initializeVisaFilter,
   setSearchCenterCoordinates,
   displayProviderInformation,
-  setMapObject,
-} from "redux/actions";
-import { getProvidersSorted } from "redux/selectors";
+  setMapObject
+} from "../../redux/actions";
+import { getProvidersSorted } from "../../redux/selectors";
 import Map from "./map";
 
 const MapContainer = props => {
@@ -35,11 +35,11 @@ const mapDispatchToProps = dispatch => {
     },
     displayProviderInformation: id => {
       dispatch(displayProviderInformation(id));
-    }, 
+    },
     setMapObject: mapObject => {
       dispatch(setMapObject(mapObject));
     },
-    setSearchCenterCoordinates: ( coordinates, mapboxId, text ) => {
+    setSearchCenterCoordinates: (coordinates, mapboxId, text) => {
       dispatch(setSearchCenterCoordinates(coordinates, mapboxId, text));
     }
   };

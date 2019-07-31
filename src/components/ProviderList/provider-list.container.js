@@ -4,8 +4,8 @@ import {
   saveProvider,
   displayProviderInformation,
   changeSortOrder
-} from "redux/actions";
-import { getProvidersSorted } from "redux/selectors.js";
+} from "../../redux/actions";
+import { getProvidersSorted } from "../../redux/selectors.js";
 import ProviderList from "./provider-list";
 
 const VISA_TYPES = ["visa1", "visa2", "visa3"];
@@ -32,10 +32,10 @@ const mapDispatchToProps = dispatch => {
       dispatch(saveProvider(id));
     },
     displayProviderInformation: id => {
-      dispatch(displayProviderInformation(id))
+      dispatch(displayProviderInformation(id));
     },
     changeSortOrder: value => {
-      dispatch(changeSortOrder(value))
+      dispatch(changeSortOrder(value));
     }
   };
 };

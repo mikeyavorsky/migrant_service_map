@@ -3,9 +3,9 @@ import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import "./map.css";
 import { circle, point, transformTranslate } from "@turf/turf";
-import typeImages from "assets/images";
-import distances from "assets/distances";
-import iconColors from "assets/icon-colors";
+import typeImages from "../../assets/images.js";
+import distances from "../../assets/distances.js";
+import iconColors from "../../assets/icon-colors.json";
 
 import {
   convertProvidersToGeoJSON,

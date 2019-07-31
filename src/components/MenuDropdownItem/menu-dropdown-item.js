@@ -20,8 +20,8 @@ import {
   faBalanceScale
 } from "@fortawesome/free-solid-svg-icons";
 import "./menu-dropdown-item.css";
-import DetailsPane from "components/DetailsPane";
-import providerTypeToColor from "provider-type-to-color.json";
+import DetailsPane from "../DetailsPane";
+import providerTypeToColor from "../../provider-type-to-color.json";
 
 const isPresent = value => value && value !== "n/a";
 
@@ -70,7 +70,10 @@ export default class DropdownMenuItem extends React.Component {
             <h5 onClick={toggleHighlight}>{provider.name}</h5>
             <div className="wrapped-info">
               <div className={`prov-type ${expand}`}>
-                <FontAwesomeIcon icon={cardIcon} color={providerTypeToColor[provider.typeName]} />
+                <FontAwesomeIcon
+                  icon={cardIcon}
+                  color={providerTypeToColor[provider.typeName]}
+                />
                 <p>{provider.typeName}</p>
               </div>
               {!isHighlighted && (
