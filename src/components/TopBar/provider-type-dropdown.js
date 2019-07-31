@@ -4,7 +4,7 @@ import CheckBoxDropdown from "../Dropdowns/checkbox-dropdown";
 const defaultSubheaderText = "Not Selected";
 export default class ProviderTypeDropdown extends React.Component {
   onCheckboxChanged = (changedOption, selectedValues) => {
-    const { onChange, providerTypes } = this.props;
+    const { onChange } = this.props;
     onChange(changedOption);
   };
 
@@ -17,7 +17,7 @@ export default class ProviderTypeDropdown extends React.Component {
         providerTypes.byId[providerTypes.visible[0]].name;
       subheaderText = selectedProviderType;
     } else {
-      subheaderText = providerTypes.visible.length + " Selected"
+      subheaderText = providerTypes.visible.length + " Selected";
     }
 
     return (

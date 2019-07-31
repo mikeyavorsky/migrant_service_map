@@ -6,15 +6,14 @@ import { circle, point, transformTranslate } from "@turf/turf";
 import typeImages from "assets/images";
 import distances from "assets/distances";
 import iconColors from "assets/icon-colors";
-import _ from "lodash";
+
 import {
   convertProvidersToGeoJSON,
   createCenterMarker,
   createDistanceMarker,
   markerStyle,
   normalizeProviders,
-  removeDistanceMarkers,
-  scrollToCard
+  removeDistanceMarkers
 } from "./utilities.js";
 
 const PLACEHOLDER_VISA_TYPES = [
@@ -138,7 +137,7 @@ class Map extends Component {
     let { providerTypes } = this.props;
     if (
       providerTypes.visible.includes(typeId) ||
-      typeId == "highlightedProviders"
+      typeId === "highlightedProviders"
     ) {
       this.findSourceInMap(typeId);
       this.map.getSource(typeId).setData({
