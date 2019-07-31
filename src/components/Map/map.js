@@ -5,6 +5,7 @@ import "./map.css";
 import { circle, point, transformTranslate } from "@turf/turf";
 import typeImages from "assets/images";
 import distances from "assets/distances";
+import iconColors from "assets/icon-colors";
 import _ from "lodash";
 import {
   convertProvidersToGeoJSON,
@@ -328,8 +329,8 @@ class Map extends Component {
     this.markerList.push(mapPin);
     mapPin.setLngLat(searchCoordinates);
 
-    const circles = distanceFilterDistances.map((radius, i) =>
-      circle(search.coordinates, radius, {
+    const circles = distanceIndicatorRadii.map((radius, i) =>
+      circle(searchCoordinates, radius, {
         ...options,
         properties: { color: color[i], "stroke-width": radius }
       })

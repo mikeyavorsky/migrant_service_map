@@ -1,7 +1,6 @@
 import { distance, point } from "@turf/turf";
 import { createSelector } from "reselect";
 
-const getProviderTypesIds = state => state.providerTypes.allIds;
 const getProviderTypesById = state => state.providerTypes.byId;
 const getVisibleProviderTypes = state => state.providerTypes.visible;
 const getProvidersById = state => state.providers.byId;
@@ -12,6 +11,7 @@ const getSearchCoordinates = state =>
   state.search.history[state.search.currentLocation];
 // const getSearchCoordinates = state => state.search.currentLocation ? state.search.history[state.search.currentLocation] : null; // TODO: separate coordinates and searched location
 const getSortMethod = state => state.providers.sortMethod;
+const getSortDirection = state => state.providers.sortDirection;
 
 export const getProvidersSorted = createSelector(
   [
@@ -22,7 +22,8 @@ export const getProvidersSorted = createSelector(
     getSearchCoordinates,
     // visa status,
     // accepting new clients,
-    getSortMethod
+    getSortMethod,
+    getSortDirection
   ],
   (
     providerTypesById,
@@ -30,7 +31,8 @@ export const getProvidersSorted = createSelector(
     providersById,
     distance,
     searchCoordinates,
-    sortMethod
+    sortMethod,
+    sortDirection
   ) => {
     // for each provider type that is active, get providers belonging to it that are near the search location
     // TODO: limit based on new client status and visa type
@@ -74,7 +76,7 @@ export const getProvidersSorted = createSelector(
           {
             id: "alphabetical",
             name: "By name",
-            providers: sortProvidersByName(flatList)
+            providers: sortProvidersByName(flatList, sortDirection)
           }
         ];
       case "Provider Type":
@@ -136,9 +138,14 @@ function getProvidersWithinDistance(providers, maxDistance) {
   );
 }
 
-function sortProvidersByDistance(providerArray) {
+function sortProvidersByDistance(providerArray, direction) {
   // Sort the list by distance
-  return providerArray.sort((a, b) => (a.distance - b.distance ? 1 : -1));
+  return providerArray.sort((a, b) => {
+    if (direction === "asc") {
+      return a.distance < b.distance ? 1 : -1;
+    }
+    return a.distance > b.distance ? 1 : -1;
+  });
 }
 
 function sortProvidersByName(providerArray, direction) {
