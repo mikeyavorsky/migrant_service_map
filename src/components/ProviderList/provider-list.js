@@ -11,19 +11,21 @@ class ProviderList extends Component {
       savedProviders,
       saveProvider,
       incomingState,
+      sortDirection,
       changeSortOrder,
+      changeSortDirection,
       highlightedProviders,
       displayProviderInformation
     } = this.props;
     return (
       <div className="service-providers">
         {!providersList.length && (
-          <>
-            <h4>NO MATCHING RESULTS</h4>
-            <p>
+          <div className={"tab-header"}>
+            <h3 className={"header-text"}>No Matching Results</h3>
+            <div className={"header-subtext"}>
               Use the filters in the top bar to adjust the number of results
-            </p>
-          </>
+            </div>
+          </div>
         )}
         {!!providersList.length && (
           <>
@@ -34,11 +36,15 @@ class ProviderList extends Component {
               handleChange={id => {
                 changeSortOrder(id);
               }}
+              changeDirection={() => {
+                changeSortDirection(sortDirection === "desc" ? "asc" : "desc");
+              }}
+              sortDirection={sortDirection}
               group="sort"
               incomingState={incomingState}
             />
             {providersList.map(providerType => (
-              <ul key={providerType.id}>
+              <ul key={providerType.id} className="providers-list">
                 {!!providerType.providers.length && ( //if there is not providers MenuDropdown is not shown
                   <MenuDropdown
                     key={providerType.id}

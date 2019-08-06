@@ -8,7 +8,7 @@ const getDistance = state => state.filters.distance;
 const getSavedProvidersIds = state => state.providers.savedProviders;
 const getHighlightedProvidersList = state => state.highlightedProviders;
 const getSearchCoordinates = state =>
-  state.search.history[state.search.currentLocation];
+state.search.history[state.search.currentLocation];
 // const getSearchCoordinates = state => state.search.currentLocation ? state.search.history[state.search.currentLocation] : null; // TODO: separate coordinates and searched location
 const getSortMethod = state => state.providers.sortMethod;
 const getSortDirection = state => state.providers.sortDirection;
@@ -23,7 +23,7 @@ export const getProvidersSorted = createSelector(
     // visa status,
     // accepting new clients,
     getSortMethod,
-    getSortDirection
+    getSortDirection,
   ],
   (
     providerTypesById,
@@ -48,8 +48,8 @@ export const getProvidersSorted = createSelector(
         options
       );
       let nearbyProviders = distance
-        ? getProvidersWithinDistance(providersWithDistances, distance)
-        : providersWithDistances;
+      ? getProvidersWithinDistance(providersWithDistances, distance)
+      : providersWithDistances;
       return {
         ...providerType,
         providers: sortProvidersByDistance(nearbyProviders)
@@ -64,24 +64,24 @@ export const getProvidersSorted = createSelector(
     );
     switch (sortMethod) {
       case "Distance":
-        return [
-          {
-            id: "distance-sort",
-            name: getDistanceSortText(sortDirection),
-            providers: sortProvidersByDistance(flatList, sortDirection)
-          }
-        ];
+      return [
+        {
+          id: "distance-sort",
+          name: getDistanceSortText(sortDirection),
+          providers: sortProvidersByDistance(flatList, sortDirection)
+        }
+      ];
       case "Name":
-        return [
-          {
-            id: "alphabetical",
-            name: "By name",
-            providers: sortProvidersByName(flatList, sortDirection)
-          }
-        ];
+      return [
+        {
+          id: "alphabetical",
+          name: "By name",
+          providers: sortProvidersByName(flatList, sortDirection)
+        }
+      ];
       case "Provider Type":
       default:
-        return groupedByProviderType;
+      return groupedByProviderType;
     }
   }
 );
@@ -127,9 +127,7 @@ function calculateProviderDistances(providers, refLocation, options) {
 }
 
 function getDistanceSortText(sortDirection) {
-  return sortDirection === "desc"
-    ? "Closest to farthest"
-    : "Farthest to closest";
+  return (sortDirection === 'desc' ? "Closest to farthest" : "Farthest to closest");
 }
 
 function getProvidersWithinDistance(providers, maxDistance) {
@@ -141,18 +139,18 @@ function getProvidersWithinDistance(providers, maxDistance) {
 function sortProvidersByDistance(providerArray, direction) {
   // Sort the list by distance
   return providerArray.sort((a, b) => {
-    if (direction === "asc") {
-      return a.distance < b.distance ? 1 : -1;
+    if (direction === 'asc') {
+      return (a.distance < b.distance) ? 1 : -1;
     }
-    return a.distance > b.distance ? 1 : -1;
+    return (a.distance > b.distance) ? 1 : -1;
   });
 }
 
 function sortProvidersByName(providerArray, direction) {
   return providerArray.sort((a, b) => {
-    if (direction === "asc") {
-      return a.name < b.name ? 1 : -1;
+    if (direction === 'asc') {
+      return (a.name < b.name) ? 1 : -1;
     }
-    return a.name > b.name ? 1 : -1;
+    return (a.name > b.name) ? 1: -1;
   });
 }

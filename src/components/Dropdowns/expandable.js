@@ -1,6 +1,6 @@
 import React from "react";
 import "./expandable.css";
-import ClickAwayDetector from "../common/click-away-detector";
+import ClickAwayDetector from "components/common/click-away-detector";
 
 export default class Expandable extends React.Component {
   static defaultProps = {
@@ -37,13 +37,20 @@ export default class Expandable extends React.Component {
     }
   };
 
+  onClickAway = () => {
+    const { expanded } = this.state;
+    if (expanded) {
+      this.setState({ expanded: false });
+    }
+  };
+
   render() {
     const { expanded } = this.state;
     const { className, content, footer, header } = this.props;
 
     return (
       <ClickAwayDetector
-        onClickAway={() => this.setState({ expanded: false })}
+        onClickAway={this.onClickAway}
         className={"expandable-container"}
       >
         <div

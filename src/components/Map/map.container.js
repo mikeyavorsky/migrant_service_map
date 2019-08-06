@@ -6,8 +6,8 @@ import {
   setSearchCenterCoordinates,
   displayProviderInformation,
   setMapObject
-} from "../../redux/actions";
-import { getProvidersSorted } from "../../redux/selectors";
+} from "redux/actions";
+import { getProvidersSorted } from "redux/selectors";
 import Map from "./map";
 
 const MapContainer = props => {

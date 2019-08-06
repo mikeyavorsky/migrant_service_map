@@ -39,7 +39,7 @@ export default class CheckBoxDropdown extends React.Component {
               );
             }}
           />
-          <label className="expandable-label" htmlFor={option}>
+          <label className="expandable-label" htmlFor={id}>
             {display}
           </label>
         </div>

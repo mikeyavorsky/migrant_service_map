@@ -9,8 +9,8 @@ import {
   clearVisaFilter,
   displayProviderInformation,
   selectTab
-} from "../../redux/actions";
-import { getProvidersSorted } from "../../redux/selectors";
+} from "redux/actions";
+import { getProvidersSorted } from "redux/selectors";
 import TopBar from "./top-bar";
 
 const TopBarContainer = props => {

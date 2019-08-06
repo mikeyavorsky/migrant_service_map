@@ -20,8 +20,9 @@ text-overflow: ellipsis;
   width: 100%;
   flex-flow: column nowrap;
   padding: 10px;
-  margin-top: 1em;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
 }
 
 .provider-card.savedHighlighted {
@@ -47,14 +48,21 @@ text-overflow: ellipsis;
   flex-direction: column;
 }
 
-.card-header h5 {
+h5.wrapped {
   margin: 0 0 5px 0;
   font-size: 16px;
   color: #000;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+h5.expanded {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #000;
+  text-overflow: ellipsis;
   cursor: pointer;
 }
 

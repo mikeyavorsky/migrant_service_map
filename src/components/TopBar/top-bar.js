@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../ProviderList/provider-list.css";
+import "components/ProviderList/provider-list.css";
 import VisaStatusDropdown from "./visa-status-dropdown";
 import ProviderTypeDropdown from "./provider-type-dropdown";
 import Search from "./search";

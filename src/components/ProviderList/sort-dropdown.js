@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Expandable from "../Dropdowns/expandable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,13 +11,13 @@ import {
 import "./sort-dropdown.css";
 
 const getSortIcon = (sortDirection, incomingState) => {
-  if (incomingState === "Distance") {
-    if (sortDirection === "asc") {
+  if (incomingState === 'Distance') {
+    if (sortDirection === 'asc') {
       return faSortNumericUp;
     }
     return faSortNumericDown;
   } else {
-    if (sortDirection === "asc") {
+    if (sortDirection === 'asc') {
       return faSortAlphaUp;
     }
     return faSortAlphaDown;
@@ -31,13 +31,11 @@ const SortDropdown = ({
   header,
   incomingState,
   options,
-  sortDirection
+  sortDirection,
 }) => {
-  let inputDiv = options.map((option, index) => (
+  let inputDiv = options.map((option, index) =>
     <div
-      className={`radio-container ${
-        option === incomingState ? "selected" : null
-      }`}
+      className={`radio-container ${option === incomingState ? "selected" : null}`}
       key={index}
       onClick={() => handleChange(option)}
     >
@@ -53,14 +51,10 @@ const SortDropdown = ({
         {option.toString()}
       </label>
     </div>
-  ));
-  let wrappedHeader = (
-    <h4>
-      {header}: {incomingState}
-    </h4>
-  );
+    );
+    let wrappedHeader = <h4>{header}: {incomingState}</h4>;
 
-  return (
+    return (
     <div className="sort-container">
       <Expandable
         className={className}
@@ -68,14 +62,10 @@ const SortDropdown = ({
         content={inputDiv}
         closeOnSelect={true}
       />
-      <FontAwesomeIcon
-        size="3x"
-        icon={getSortIcon(sortDirection, incomingState)}
-        onClick={() => changeDirection()}
-        style={{ cursor: "pointer" }}
-      />
+      <FontAwesomeIcon size="3x" icon={getSortIcon(sortDirection, incomingState)}
+        onClick={() => changeDirection()} style={{cursor: 'pointer'}}/>
     </div>
-  );
+    )
 };
 
 export default SortDropdown;

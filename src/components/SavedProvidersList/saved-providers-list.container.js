@@ -4,8 +4,8 @@ import {
   displayProviderInformation,
   saveProvider,
   reorderSavedProviders
-} from "../../redux/actions";
-import { getSavedProviders } from "../../redux/selectors.js";
+} from "redux/actions";
+import { getSavedProviders } from "redux/selectors.js";
 import SavedProvidersList from "./saved-providers-list";
 import { DragDropContext } from "react-beautiful-dnd";
 

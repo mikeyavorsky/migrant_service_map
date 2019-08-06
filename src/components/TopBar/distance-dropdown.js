@@ -1,6 +1,6 @@
 import React from "react";
 import RadioButtonDropdown from "../Dropdowns/radio-button-dropdown";
-import distances from "../../assets/distances";
+import distances from "assets/distances";
 import { Row } from "simple-flexbox";
 
 const defaultDistanceText = "None Selected";
@@ -17,7 +17,8 @@ export default class DistanceDropdown extends React.Component {
     }
   };
 
-  clearDistance = () => {
+  clearDistance = (event) => {
+    event.stopPropagation()
     const { onChange = () => {} } = this.props;
     onChange(undefined);
     this.setState({ distanceText: defaultDistanceText });

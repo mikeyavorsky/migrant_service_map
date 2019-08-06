@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.758b0cfb.chunk.css",
+    "main.js": "/static/js/main.5c668d9f.chunk.js",
+    "main.js.map": "/static/js/main.5c668d9f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.3224996a.chunk.css": "/static/css/2.3224996a.chunk.css",
+    "static/js/2.9d90b089.chunk.js": "/static/js/2.9d90b089.chunk.js",
+    "static/js/2.9d90b089.chunk.js.map": "/static/js/2.9d90b089.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.dac51caef77d8f4b8e39b26a8b0f8dde.js": "/precache-manifest.dac51caef77d8f4b8e39b26a8b0f8dde.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.3224996a.chunk.css.map": "/static/css/2.3224996a.chunk.css.map",
+    "static/css/main.758b0cfb.chunk.css.map": "/static/css/main.758b0cfb.chunk.css.map",
+    "static/media/education.png": "/static/media/education.5cbea18c.png",
+    "static/media/food-cash-assistance.png": "/static/media/food-cash-assistance.dd5881b6.png"
+  }
+}
